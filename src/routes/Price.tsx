@@ -15,7 +15,6 @@ const PriceList = styled.li`
   color: ${(props) => props.theme.textColor};
   display: flex;
   align-items: center;
-  width: 430px;
   font-size: 15px;
   border-radius: 20px;
   margin-bottom: 10px;
@@ -23,12 +22,13 @@ const PriceList = styled.li`
 `;
 
 const Tag = styled.h3`
-  width: 50%;
+  padding: 0px 90px;
   font-size: 15px;
   font-weight: 900;
   span {
     font-size: 20px;
     color: white;
+    margin-left: 110px;
   }
 `;
 
@@ -100,9 +100,8 @@ function Price({ coinId }: PriceProps) {
           <Overview>
             <PriceLists>
               <PriceList>
-                <Tag>Price :</Tag>
                 <Tag>
-                  <span>${data?.quotes.USD.price.toFixed(2)}</span>
+                  Price : <span>${data?.quotes.USD.price.toFixed(2)}</span>
                 </Tag>
               </PriceList>
               <PriceList>
