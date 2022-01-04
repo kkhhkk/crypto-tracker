@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
@@ -15,6 +16,21 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const Search = styled.div`
+  background-color: "transparent";
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 10px;
+  input {
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid ${(props) => props.theme.textColor};
+    color: ${(props) => props.theme.textColor};
+    border-radius: 2px;
+  }
 `;
 
 const CoinsList = styled.ul``;
@@ -70,16 +86,9 @@ interface ICoins {
 
 function Coins() {
   const { isLoading, data } = useQuery<ICoins[]>("allCoins", fetchCoins);
-  //   const [coins, setCoins] = useState<ICoins[]>([]);
-  //   const [loading, setLoading] = useState(true);
-  //   useEffect(() => {
-  //     (async () => {
-  //       const response = await fetch("https://api.coinpaprika.com/v1/coins");
-  //       const json = await response.json();
-  //       setCoins(json.slice(0, 100));
-  //       setLoading(false);
-  //     })();
-  //   }, []);
+
+  const [searchList, setSearchList] = useState<string>("");
+  console.log(searchList);
   return (
     <Container>
       <Helmet>
@@ -88,26 +97,47 @@ function Coins() {
       <Header>
         <Title>Crpyto</Title>
       </Header>
+      <Search>
+        <input
+          type="text"
+          placeholder="Search"
+          onChange={(e) => {
+            setSearchList(e.target.value);
+          }}
+        />
+      </Search>
       {isLoading ? (
         <Loading>Loading...</Loading>
       ) : (
         <CoinsList>
-          {data?.slice(0, 200).map((coin) => (
-            <Coin key={coin.id}>
-              <Link
-                to={{
-                  pathname: `/${coin.id}`,
-                  state: { name: coin.name },
-                }}
-              >
-                {coin.rank} :{" "}
-                <Img
-                  src={`https://cryptoicon-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
-                />
-                {coin.name} ( {coin.symbol} ) &rarr;
-              </Link>
-            </Coin>
-          ))}
+          {data
+            ?.slice(0, 200)
+            .filter((val) => {
+              if (searchList === "") {
+                return val;
+              } else {
+                return (
+                  val.name.toLowerCase().includes(searchList.toLowerCase()) ||
+                  val.symbol.toLowerCase().includes(searchList.toLowerCase())
+                );
+              }
+            })
+            .map((coin) => (
+              <Coin key={coin.id}>
+                <Link
+                  to={{
+                    pathname: `/${coin.id}`,
+                    state: { name: coin.name },
+                  }}
+                >
+                  {coin.rank} :{" "}
+                  <Img
+                    src={`https://cryptoicon-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
+                  />
+                  {coin.name} ( {coin.symbol} ) &rarr;
+                </Link>
+              </Coin>
+            ))}
         </CoinsList>
       )}
     </Container>
