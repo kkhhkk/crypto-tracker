@@ -10,7 +10,9 @@ const Overview = styled.div`
   margin: 0 auto;
 `;
 
-const PriceLists = styled.ul``;
+const PriceLists = styled.ul`
+  width: 90%;
+`;
 
 const PriceList = styled.li`
   background-color: rgba(0, 0, 0, 0.5);
@@ -21,24 +23,21 @@ const PriceList = styled.li`
   border-radius: 20px;
   margin-bottom: 10px;
   padding: 15px;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 const Tag = styled.h3`
-  margin-right: 100px;
   font-size: 15px;
   font-weight: 900;
 `;
 
 const Span = styled.h3`
-  margin-right: 100px;
   font-size: 20px;
   font-weight: 600;
   color: ${(props) => props.theme.textColor};
 `;
 
 const Text = styled.h3<{ isPositive?: Boolean }>`
-  margin-right: 100px;
   font-size: 20px;
   font-weight: 600;
   color: ${(props) => (props.isPositive ? "red" : "blue")};
