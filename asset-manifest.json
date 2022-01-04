@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/github.io/crypto-tracker/static/js/main.c6f1fdd1.chunk.js",
-    "main.js.map": "/github.io/crypto-tracker/static/js/main.c6f1fdd1.chunk.js.map",
-    "runtime-main.js": "/github.io/crypto-tracker/static/js/runtime-main.fe96732b.js",
-    "runtime-main.js.map": "/github.io/crypto-tracker/static/js/runtime-main.fe96732b.js.map",
-    "static/js/2.28a1cc4f.chunk.js": "/github.io/crypto-tracker/static/js/2.28a1cc4f.chunk.js",
-    "static/js/2.28a1cc4f.chunk.js.map": "/github.io/crypto-tracker/static/js/2.28a1cc4f.chunk.js.map",
-    "index.html": "/github.io/crypto-tracker/index.html",
-    "static/js/2.28a1cc4f.chunk.js.LICENSE.txt": "/github.io/crypto-tracker/static/js/2.28a1cc4f.chunk.js.LICENSE.txt"
+    "main.js": "/crypto-tracker/static/js/main.0f673156.chunk.js",
+    "main.js.map": "/crypto-tracker/static/js/main.0f673156.chunk.js.map",
+    "runtime-main.js": "/crypto-tracker/static/js/runtime-main.f63963ec.js",
+    "runtime-main.js.map": "/crypto-tracker/static/js/runtime-main.f63963ec.js.map",
+    "static/js/2.297f0c7f.chunk.js": "/crypto-tracker/static/js/2.297f0c7f.chunk.js",
+    "static/js/2.297f0c7f.chunk.js.map": "/crypto-tracker/static/js/2.297f0c7f.chunk.js.map",
+    "index.html": "/crypto-tracker/index.html",
+    "static/js/2.297f0c7f.chunk.js.LICENSE.txt": "/crypto-tracker/static/js/2.297f0c7f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fe96732b.js",
-    "static/js/2.28a1cc4f.chunk.js",
-    "static/js/main.c6f1fdd1.chunk.js"
+    "static/js/runtime-main.f63963ec.js",
+    "static/js/2.297f0c7f.chunk.js",
+    "static/js/main.0f673156.chunk.js"
   ]
 }
