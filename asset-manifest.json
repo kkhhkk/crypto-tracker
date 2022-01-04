@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/crypto-tracker/static/js/main.0f673156.chunk.js",
-    "main.js.map": "/crypto-tracker/static/js/main.0f673156.chunk.js.map",
+    "main.js": "/crypto-tracker/static/js/main.3f6722ca.chunk.js",
+    "main.js.map": "/crypto-tracker/static/js/main.3f6722ca.chunk.js.map",
     "runtime-main.js": "/crypto-tracker/static/js/runtime-main.f63963ec.js",
     "runtime-main.js.map": "/crypto-tracker/static/js/runtime-main.f63963ec.js.map",
     "static/js/2.297f0c7f.chunk.js": "/crypto-tracker/static/js/2.297f0c7f.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.f63963ec.js",
     "static/js/2.297f0c7f.chunk.js",
-    "static/js/main.0f673156.chunk.js"
+    "static/js/main.3f6722ca.chunk.js"
   ]
 }
