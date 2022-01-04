@@ -70,8 +70,6 @@ const CoinInfo = styled.div`
 `;
 
 const Tabs = styled.div`
-  max-width: 480px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 `;
@@ -79,6 +77,7 @@ const Tabs = styled.div`
 const Tab = styled.div<{ isActive: boolean }>`
   display: flex;
   justify-content: center;
+  width: 49%;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   padding: 10px;

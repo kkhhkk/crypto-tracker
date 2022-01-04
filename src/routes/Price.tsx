@@ -6,6 +6,8 @@ const Overview = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 480px;
+  margin: 0 auto;
 `;
 
 const PriceLists = styled.ul``;
@@ -19,20 +21,24 @@ const PriceList = styled.li`
   border-radius: 20px;
   margin-bottom: 10px;
   padding: 15px;
+  justify-content: space-between;
 `;
 
 const Tag = styled.h3`
-  padding: 0px 90px;
+  margin-right: 100px;
   font-size: 15px;
   font-weight: 900;
-  span {
-    font-size: 20px;
-    color: white;
-    margin-left: 110px;
-  }
+`;
+
+const Span = styled.h3`
+  margin-right: 100px;
+  font-size: 20px;
+  font-weight: 600;
+  color: ${(props) => props.theme.textColor};
 `;
 
 const Text = styled.h3<{ isPositive?: Boolean }>`
+  margin-right: 100px;
   font-size: 20px;
   font-weight: 600;
   color: ${(props) => (props.isPositive ? "red" : "blue")};
@@ -100,9 +106,8 @@ function Price({ coinId }: PriceProps) {
           <Overview>
             <PriceLists>
               <PriceList>
-                <Tag>
-                  Price : <span>${data?.quotes.USD.price.toFixed(2)}</span>
-                </Tag>
+                <Tag>Price :</Tag>
+                <Span>${data?.quotes.USD.price.toFixed(2)}</Span>
               </PriceList>
               <PriceList>
                 <Tag>Curr / Max :</Tag>
